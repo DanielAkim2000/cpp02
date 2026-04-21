@@ -14,6 +14,8 @@ create_dirs "$value"
 
 #Other Solution
 
+#DIRS= ex00 ex01 ex02 ex03
+
 #for dir in $DIRS
 #do
 #	mkdir -p $dir;

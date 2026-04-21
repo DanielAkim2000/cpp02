@@ -1,0 +1,42 @@
+#ifndef FIXED_HPP
+#define FIXED_HPP
+
+#include <iostream>
+#include <cmath>
+
+class Fixed
+{
+private:
+	int fixedValue;
+	static const int bits = 8;
+
+public:
+	Fixed(void);
+	Fixed(const Fixed &other);
+	Fixed(const int &val);
+	Fixed(const float &val);
+	Fixed &operator=(const Fixed &other);
+	Fixed &operator>(const Fixed &other);
+	Fixed &operator<(const Fixed &other);
+	Fixed &operator>=(const Fixed &other);
+	Fixed &operator<=(const Fixed &other);
+	Fixed &operator==(const Fixed &other);
+	Fixed &operator!=(const Fixed &other);
+	Fixed &operator+(const Fixed &other);
+	Fixed &operator-(const Fixed &other);
+	Fixed &operator*(const Fixed &other);
+	Fixed &operator/(const Fixed &other);
+	Fixed &operator++(void);
+	Fixed &operator--(void);
+	Fixed operator++(int);
+	~Fixed(void);
+
+	int getRawBits(void) const;
+	void setRawBits(int const raw);
+	float toFloat(void) const;
+	int toInt(void) const;
+};
+
+std::ostream &operator<<(std::ostream &out, const Fixed &other);
+
+#endif

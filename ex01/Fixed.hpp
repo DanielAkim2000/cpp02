@@ -13,15 +13,17 @@ private:
 public:
 	Fixed(void);
 	Fixed(const Fixed &other);
-	Fixed::Fixed(const int &val);
-	Fixed::Fixed(const float &val);
+	Fixed(const int &val);
+	Fixed(const float &val);
 	Fixed &operator=(const Fixed &other);
 	~Fixed(void);
 
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
-	float toFloat(void);
-	int toInt();
+	float toFloat(void) const;
+	int toInt(void) const;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &other);
 
 #endif
