@@ -16,7 +16,10 @@ Fixed area(Point const a, Point const b, Point const c)
 {
 	float res;
 
-	res = 0.5f * std::fabs((a.getX().toFloat()) * (b.getY().toFloat() - c.getY().toFloat()) + b.getX().toFloat() * (c.getY().toFloat() - a.getY().toFloat()) + c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat()));
+	res = ((a.getX().toFloat()) * (b.getY().toFloat() - c.getY().toFloat()) + b.getX().toFloat() * (c.getY().toFloat() - a.getY().toFloat()) + c.getX().toFloat() * (a.getY().toFloat() - b.getY().toFloat()));
+	if (res < 0)
+		res = -1 * res;
+	res = 0.5f * res;
 	return (Fixed(res));
 }
 
